@@ -167,16 +167,16 @@ function drawRandomStars() {
     }
 }
 
-function drawImage() {
+//function drawImage() {
 
-    var x = imageSpawn[0] * camDist / (camDist + bootesPos) + width / 2;
-    var y = imageSpawn[1] * camDist / (camDist + bootesPos) + height / 2;
-    var w = 2 * (width / 2 - x);
+//    var x = imageSpawn[0] * camDist / (camDist + bootesPos) + width / 2;
+//    var y = imageSpawn[1] * camDist / (camDist + bootesPos) + height / 2;
+//    var w = 2 * (width / 2 - x);
 
-    tint(255, tintLevel); 
-    image(img, x, y, w, w * hwratio);
-    noTint();
-}
+//    tint(255, tintLevel); 
+//    image(img, x, y, w, w * hwratio);
+//    noTint();
+//}
 
 
 draw = function() {
