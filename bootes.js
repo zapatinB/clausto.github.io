@@ -62,9 +62,8 @@ const weightAdjust = factorWeight / (2 * Math.atan(1 / (camDist + bootesStop)));
 const colorAdjust = 400 / (2 * Math.atan(1 / (camDist + bootesStop)));
 
 function setup() {
-    createCanvas(1200, 800);
-
-    // Draw
+    let canvas = createCanvas(1200, 800);
+    canvas.parent('canvas-container'); // Attach the canvas to the div with id 'canvas-container'
     noStroke();
 }
 
