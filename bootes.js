@@ -11,7 +11,7 @@ canvasContainer.appendChild(canvas);
 const ctx = canvas.getContext('2d');
 
 // Parámetros
-const intervaloBootes = 4000;
+const intervaloBootes = 2000;
 const zdiff = 30000;
 const normRad = 75;
 const bootesTranspStart = 5000;
