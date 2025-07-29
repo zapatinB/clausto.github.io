@@ -1,0 +1,22 @@
+html {
+  font-size: 1rem;
+  font-family: "Calibri Light", Calibri;
+}
+
+body { 
+  background-color: #000000; 
+  color: white;
+}
+
+h1 {
+  font-family: "Calibri Light";
+  text-align: center;
+  font-weight: normal;
+}
+
+h2 {
+  font-family: "Calibri Light";
+  font-size: 2rem;
+  text-align: left;
+  font-weight: normal;
+}

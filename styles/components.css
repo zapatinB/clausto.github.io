@@ -1,0 +1,24 @@
+.contenedor_imagen {
+  text-align: center;
+}
+
+.texto_img {
+  margin-top: 10px;
+  font-style: italic;
+  color: #ffffff;
+}
+
+.disc {
+  overflow: auto;
+  margin-bottom: 20px;
+}
+
+.disc img {
+  float: left;
+  margin-right: 20px;
+  width: 20rem;
+}
+
+.disc p {
+  margin-left: 20rem;
+}
