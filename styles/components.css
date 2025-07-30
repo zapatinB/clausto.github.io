@@ -1,24 +1,38 @@
-.contenedor_imagen {
+.page_content {
+}
+
+.texttext {
+  padding: 0px;
+  margin: 2rem;
+}
+
+.texttext p {
+  text-indent: 1.5rem;
+  text-align: justify;
+}
+
+.texttext p:first-of-type {
+  text-indent: 0;
+}
+
+.gallery_container {
+  margin: 5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 }
 
-.texto_img {
-  margin-top: 10px;
+.gallery_container img {
+  width : 100%;
+  max-width: 750px;
+  height: auto;
+  display: block;
+  margin: 0.3rem;
+}
+
+.gallery_container p {
   font-style: italic;
-  color: #ffffff;
+  margin: 0.25rem;
 }
 
-.disc {
-  overflow: auto;
-  margin-bottom: 20px;
-}
-
-.disc img {
-  float: left;
-  margin-right: 20px;
-  width: 20rem;
-}
-
-.disc p {
-  margin-left: 20rem;
-}
