@@ -47,3 +47,20 @@ body {
   list-style-type: None;
 }
 
+.disc_wrapper {
+  grid-column: 1 / 4;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 75rem;
+}
+
+.disc_wrapper img {
+  margin: 0 auto;
+  display: block;
+  width: 100%;
+  max-width: 20rem;
+}
+
+.disc_wrapper .img_description {
+  text-align: center;
+}

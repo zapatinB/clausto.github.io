@@ -1,0 +1,77 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Fixed Layout</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      height: 100vh;
+    }
+
+    body {
+      display: grid;
+      grid-template-rows: 80px 1fr 80px;
+    }
+
+    header, footer {
+      background: #ccc;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .main {
+      display: flex;
+      height: 100%;
+      overflow: hidden;
+    }
+
+    .index {
+      min-width: 200px;
+      background-color: #f0f0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 1rem;
+      border-right: 1px solid #ddd;
+    }
+
+    .image-row {
+      flex-grow: 1;
+      display: flex;
+      align-items: stretch;
+      gap: 1rem;
+      padding: 1rem;
+      overflow-x: auto;
+      height: 100%;
+    }
+
+    .image-row img {
+      height: 100%;
+      width: auto;
+      display: block;
+      object-fit: contain;
+    }
+  </style>
+</head>
+<body>
+  <header>Header</header>
+
+  <div class="main">
+    <div class="index">Content Index</div>
+    <div class="image-row">
+      <img src="https://www.dropbox.com/scl/fi/or1x96lo3x72qdn28fnlt/1.jpeg?rlkey=nyrcoksqsyh7deyuhz98wt9oq&raw=1" alt="Image 1">
+      <img src="https://via.placeholder.com/400x300" alt="Image 2">
+      <img src="https://via.placeholder.com/400x300" alt="Image 3">
+      <img src="https://via.placeholder.com/400x300" alt="Image 4">
+      <img src="https://via.placeholder.com/400x300" alt="Image 5">
+    </div>
+  </div>
+
+  <footer>Footer</footer>
+</body>
+</html>
