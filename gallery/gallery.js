@@ -9,21 +9,18 @@ const imageSets = {
     "https://www.dropbox.com/scl/fi/boaoz0n8vw1kcri4ubz0p/7.jpg?rlkey=7ebuttm122frjs3stb1ta40hv&raw=1"
   ],
   "taladro": [
-    "images/page2/img1.jpg",
-    "images/page2/img2.jpg",
-    "images/page2/img3.jpg"
+    "https://www.dropbox.com/scl/fi/djm250mcninxcwbw4kema/t1.jpg?rlkey=6qpao1vv1i06pbnk20w414c7x&raw=1",
+    "https://www.dropbox.com/scl/fi/c5mhm457ohozktvcy50a4/t2.jpg?rlkey=3osl6d8i6x2w8ey28x3874yhp&raw=1",
+    "https://www.dropbox.com/scl/fi/6k0htt6xu3jeidql1km4j/CV_Alejandro_Naranjo_Caraza.jpeg?rlkey=0awn0xxjrtg3vkbp86nplaluz&raw=1",
+    "https://www.dropbox.com/scl/fi/a8ql7u40j9b52op769qtq/t4.JPG?rlkey=lsmv4n52bvo9k35sxfwcl4slk&st=nfno0rlm&raw=1",
+    "https://www.dropbox.com/scl/fi/hrbusoze9a5cky82slko9/t5.JPG?rlkey=z2us49qmoqp06rnx17kh54ir2&st=xmgh5hy2&raw=1",
+    "https://www.dropbox.com/scl/fi/nkzgdz0a3ddlippa12dz5/t6.jpg?rlkey=697vbzzrvjg4ou9cxw1bu6a4b&st=esnfk58m&raw=1",
+    "https://www.dropbox.com/scl/fi/7lka4vr08wzbxibp11h4h/t7.jpg?rlkey=37islztjrw4ngaruoanv6zne6&st=emkwqns6&raw=1"
   ],
 };
 
-function getPageId() {
-  const path = window.location.pathname; // e.g. "/page1.html"
-  const page = path.split("/").pop().split(".")[0]; // get 'page1'
-  return page;
-}
-
-function loadGalleryImages() {
-  const pageId = getPageId();
-  const images = imageSets[pageId] || [];
+function loadGalleryImages(galleryId) {
+  const images = imageSets[galleryId] || [];
 
   const container = document.querySelector(".content_wrapper");
   container.innerHTML = ""; // Clear previous content
@@ -37,5 +34,16 @@ function loadGalleryImages() {
   });
 }
 
-// Run on page load
-window.addEventListener("DOMContentLoaded", loadGalleryImages);
+window.addEventListener("DOMContentLoaded", () => {
+  // Optionally load default gallery on page load
+  loadGalleryImages("zapatin");
+
+  // Attach click event to all gallery links
+  document.querySelectorAll('nav a[data-gallery]').forEach(link => {
+    link.addEventListener("click", e => {
+      e.preventDefault();  // prevent default link behavior
+      const galleryId = link.getAttribute("data-gallery");
+      loadGalleryImages(galleryId);
+    });
+  });
+});
