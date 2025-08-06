@@ -6,41 +6,30 @@ body {
   display: grid;
   grid-template-columns: 1fr 2fr 1fr;
   width: 100%;
-  border-style: solid;
-  border-color: blue;
 }
 
 .nav {
   grid-column: 1 / 4;
   grid-row: 1;
-  border-style: solid;
-  border-color: pink;
 }
 
-.nav ul{
+.nav ul {
   display: flex;
   flex-direction: row;
   justify-content: flex-end;
   list-style-type: None;
   gap: 2rem;
-  border-style: solid;
-  border-color: blue;
 }
 
 .content_wrapper {
   max-width: 1200px;
   grid-column: 2;
   grid-row: 2;
-  border-style: solid;
-  border-color: pink;
 }
 
 .content_index {
   grid-column: 1;
   grid-row: 2;
-  border-style: solid;
-  border-color: pink;
-
 }
 
 .content_index ul {

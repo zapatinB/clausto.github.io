@@ -2,6 +2,21 @@
   margin-right:auto;
 }
 
+.nav ul a:link {
+  color: white;
+  text-decoration: none;
+}
+
+.nav ul a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+.nav ul a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
 .page_content {
 }
 
