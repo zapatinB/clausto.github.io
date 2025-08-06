@@ -34,6 +34,11 @@ body {
 
 .content_index ul {
   list-style-type: None;
+  margin-bottom: 1.5rem;
+}
+
+.content_index ul li {
+  margin-bottom: 0.5rem;
 }
 
 .disc_wrapper {

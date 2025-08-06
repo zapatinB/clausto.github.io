@@ -1,21 +1,22 @@
 html {
-  font-size: 100%;
+  font-size: 85%;
 }
 
 @media (max-width: 480px) {
   html {
-    font-size: 87.5%;
+    font-size: 75%;
   }
 }
 
-body { 
+body {
+  font-size: 1rem; /* = 12px */
+  line-height: 1.5;
+  font-family: system-ui, sans-serif;
   background-color: #111000; 
   color: white;
-  font-family: helvetica, arial, sans-serif;
-  font-size: 10pt;
 }
 
-.claustro {
+#claustro, .claustro {
   font-weight: bold;
 }
 
