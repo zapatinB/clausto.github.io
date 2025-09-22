@@ -23,16 +23,29 @@
 .texttext {
   padding: 0px;
   margin-bottom: 2.5rem;
-  margin-top: 20;
+  margin-top: 2rem;/**/
+  max-width: 100vw;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+.texttext pre {
+  white-space: pre-wrap;     /* preserves line breaks, spaces, tabs + wraps long lines */
+  word-break: break-word;    /* break long words if necessary */
+  overflow-wrap: break-word; /* extra safety */
+  width: 100%;               /* fill parent container */
+  max-width: 100%;           /* never exceed parent width */
+  margin: 0;
+  box-sizing: border-box;
+  display: block;
+  font-family: inherit;      /* optional: use same font as body */
+  font-size: 1rem;           /* optional: match body text */
+  line-height: 1.5;          /* optional: improve readability */
+  text-align: justify;          /* avoid justify on <pre> */
 }
 
 .texttext p {
-  text-indent: 1.5rem;
   text-align: justify;
-}
-
-.texttext p:first-of-type {
-  text-indent: 0;
 }
 
 .gallery_container {
