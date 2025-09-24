@@ -13,7 +13,8 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
     <script src="https://unpkg.com/ccapture.js@1.1.0/build/CCapture.all.min.js"></script>
-    <script src="../jsnoodles/insertText.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/js-yaml@4.1.0/dist/js-yaml.min.js"></script>
+    <script src="../jsnoodles/insertDiscs.js"></script>
 
 </head>
 
@@ -44,22 +45,8 @@
       </ul>
 </nav>
 
-<div class="content_wrapper">
-
-<p><b>Sittin' by the Road; Blaze Foley; 2010</b><p>
-<img src="https://www.dropbox.com/scl/fi/5q7pzcs7fe8lb53rpkr6e/1.blaze_foley.jpeg?rlkey=q9mu3o9sjlgwrbrzwo00ao7i5&raw=1" alt="discBlazeFoley">
-<div class="discReview" id="discBlazeFoley">
-</div>
-<script>insertText("../texti/disc01BlazeFoley.txt","discBlazeFoley");</script>
-
-<p><b>V; Follakzoid; 2023</b></p>
-<img src="https://www.dropbox.com/scl/fi/mstdrq5niajtovnjmerd6/2.F-llakzoid.jpeg?rlkey=awvuda12qzt9scp1uubdeks4u&raw=1">
-<div class="discReview" id="discFollakzoid">
-</div>
-<script>insertText("../texti/disc02Follakzoid.txt","discFollakzoid");</script>
-
-
-</div>
+<div class="content_wrapper" id="disc_content"> </div>
+<script>insertDiscs("../texti/disc/config.yml","../texti/disc/", "disc_content");</script>
 </div>
 </body>
 </html>
