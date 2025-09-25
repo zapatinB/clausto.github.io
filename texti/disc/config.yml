@@ -1,11 +1,111 @@
-- title: "Blaze Foley | Drunkin No 3 | 1973 "
+- title: "SITTIN' BY THE ROAD | BLAZE FOLEY | 2010"
   name: "disc01BlazeFoley.txt"
   image: ""
 
-- title: "Follakzoid"
+- title: "V | FOLLAKZOID | 2023"
   name: "disc02Follakzoid.txt"
   image: ""
 
-- title: "Danger Mouse"
+- title: "THE GREY ALBUM | DANGER MOUSE | 2004"
   name: "disc03DangerMouse.txt"
+  image: ""
+
+- title: "I LOVE YOU JENNIFER B | JOCKSTRAP | 2022"
+  name: "disc04Jockstrap.txt"
+  image: ""
+
+- title: "MADVILLAINY | MADVILLAIN | 2004"
+  name: "disc06Madvillain.txt"
+  image: ""
+
+- title: "THREE BELLS | TY SEGALL | 2024"
+  name: "disc07Segall.txt"
+  image: ""
+
+- title: "ELEGANT GYPSY | AL DI MEOLA | 1977"
+  name: "disc08Meola.txt"
+  image: ""
+
+- title: "DEATHCONSCIOUSNESS | HAVE A NICE LIFE | 2008"
+  name: "disc09Deathconsciousness.txt"
+  image: ""
+
+- title: "ATLAS | YO SOY MATT | 2019"
+  name: "disc10YoSoyMatt.txt"
+  image: ""
+
+- title: "SUBMERSIVE BEHAVIOUR | TROPICAL FUCK STORM | 2023"
+  name: "disc11TropicalFS.txt"
+  image: ""
+
+- title: "LOSS OF LIFE | MGMT | 2024"
+  name: "disc12MGMT.txt"
+  image: ""
+
+- title: "THE DARK SIDE OF THE MOON REDUX | ROGER WATERS | 2023"
+  name: "disc13RW.txt"
+  image: ""
+
+- title: "AGAIN | ONEOHTRIX POINT NEVER | 2023"
+  name: "disc14Oneohtrix.txt"
+  image: ""
+
+- title: "HOW TO SURVIVE A BAD TRIP | YSSUE | 2024"
+  name: "disc15Yssue.txt"
+  image: ""
+
+- title: "GOD GAMES | THE KILLS | 2023"
+  name: "disc16Kills.txt"
+  image: ""
+
+- title: "ROOTS | SEPULTRA | 1996"
+  name: "disc17Sepultra.txt"
+  image: ""
+
+- title: "RIKI | RIKI | 2020"
+  name: "disc18Riki.txt"
+  image: ""
+
+- title: "POSITIVE FORCE | DELICATE STEVE | 2012"
+  name: "disc19Delicate.txt"
+  image: ""
+
+- title: "KOMARA | KOMARA | 2015"
+  name: "disc20Komara.txt"
+  image: ""
+
+- title: "HIT ME HARD AND SOFT | BILLIE EILISH | 2024"
+  name: "disc21Eilish.txt"
+  image: ""
+
+- title: "AT FOLSOM PRISON | JOHNNY CASH | 1968"
+  name: "disc23Cash.txt"
+  image: ""
+
+- title: "ANTITIMOROUMENI | Ὁπλίτης | 2023"
+  name: "disc24Antitimoroumeni.txt"
+  image: ""
+
+- title: "AWAKEN, MY LOVE! | CHILDISH GAMBINO | 2016"
+  name: "disc25Gambino.txt"
+  image: ""
+
+- title: "EMPATHOGEN | WILLOW | 2024"
+  name: "disc26Willow.txt"
+  image: ""
+
+- title: "AUTOMATIC | MILDLIFE | 2020"
+  name: "disc27Midlife.txt"
+  image: ""
+
+- title: "IRRESISTIBLE BLISS | SOUL COUGHING | 1996"
+  name: "disc28SoulCoughing.txt"
+  image: ""
+
+- title: "WHERE'S MY UTOPIA | YARD ACT | 2024"
+  name: "disc29YardAct.txt"
+  image: ""
+
+- title: "HIGHWAYMAN 2 | THE HIGHWAYMEN | 1990"
+  name: "disc30Highwayman.txt"
   image: ""
