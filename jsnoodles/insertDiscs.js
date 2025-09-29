@@ -1,10 +1,10 @@
 async function insertText(textDir, parentId) {
   const parent = document.querySelector(`#${parentId}`);
-  parent.innerHTML = "";
+  //parent.innerHTML = "";
   try {
     const res = await fetch(textDir);
     const text = await res.text();
-    const child = document.createElement("pre");
+    const child = document.createElement("p");
     child.textContent = text;//was innerHTML
     parent.appendChild(child);
   }
@@ -33,16 +33,17 @@ async function insertDiscs(yamlDir, discDirRef, parentId) {
       console.log(imageDir);
       const titleElem = document.createElement('h2');
       titleElem.textContent = title;
-      const textElem = document.createElement('div');
+      const textContainer = document.createElement('div');
       const textId = title.toLowerCase().replace(/[^a-z0-9]/g, '');
-      textElem.setAttribute("id",textId);
+      textContainer.setAttribute("id",textId);
+      textContainer.setAttribute("class","textContainer");
       container.appendChild(titleElem);
+      container.appendChild(textContainer);
       if (imageDir!="") {
-        const imgElem = document.createElement('img');
-        imgElem.setAttribute("src",imageDir);
-        container.appendChild(imgElem);
+        const imageElem = document.createElement("img");
+        imageElem.setAttribute("src",imageDir);
+        textContainer.appendChild(imageElem);
       }
-      container.appendChild(textElem);
       await insertText(textDir,textId);
     }
   } catch (error) {

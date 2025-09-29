@@ -55,23 +55,3 @@ a:hover {
   background-color: #151515; 
 }
 
-.disc_wrapper {
-  grid-column: 2;
-  grid-row: 2;
-  margin: 0 auto;
-  /*padding-left: 2rem;*/
-  /*padding-right: 2rem;*/
-  width: 100%;
-  background-color: #151515; 
-}
-
-.disc_wrapper img {
-  margin: 0 auto;
-  display: block;
-  width: 100%;
-  max-width: 20rem;
-}
-
-.disc_wrapper .img_description {
-  text-align: center;
-}

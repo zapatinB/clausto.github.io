@@ -20,57 +20,45 @@
 .page_content {
 }
 
-.texttext {
-  padding: 0px;
-  margin-bottom: 2.5rem;
-  margin-top: 2rem;/**/
-  max-width: 100vw;
-  overflow: hidden;
-  box-sizing: border-box;
+#discIntro {
+  margin: 2rem 2rem;
 }
 
-img {
-  width: 20rem;
-  margin: 2rem auto;
-  display: block;
-}
-
-pre {
-  white-space: pre-wrap;     /* preserves line breaks, spaces, tabs + wraps long lines */
-  word-break: break-word;    /* break long words if necessary */
-  overflow-wrap: break-word; /* extra safety */
-  width: 100%;               /* fill parent container */
-  max-width: 100%;           /* never exceed parent width */
-  margin: 0;
-  box-sizing: border-box;
-  display: block;
-  font-family: inherit;      /* optional: use same font as body */
-  font-size: 1rem;           /* optional: match body text */
-  line-height: 1.5;          /* optional: improve readability */
-  text-align: justify;          /* avoid justify on <pre> */
-}
-
-.texttext p {
+#discIntro p {
   text-align: justify;
 }
 
-.gallery_container {
-  margin: 2.5rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
+#discPikelangelo p {
+  text-align: justify;
 }
 
-.gallery_container img {
-  width : 100%;
-  max-width: 750px;
-  height: auto;
-  display: block;
-  margin: 0.3rem;
+#discPikelangelo {
+  margin: 2rem 2rem;
+  text-align: justify;
 }
 
-.gallery_container p {
-  font-style: italic;
-  margin: 0.25rem;
+.textContainer {
+  min-height: 20rem;
+  text-align: justify;
+}
+
+.textContainer img {
+  float: left;
+  width: auto;
+  height: 20rem;
+  margin-right: 2rem;
+}
+
+.textContainer pre, p {
+  white-space: pre-wrap;     /* preserves line breaks, spaces, tabs + wraps long lines */
+  word-break: break-word;    /* break long words if necessary */
+  overflow-wrap: break-word; /* extra safety */
+  max-width: 100%;           /* never exceed parent width */
+  margin: 0;
+  box-sizing: border-box;
+  display: inline;
+  font-family: inherit;      /* optional: use same font as body */
+  font-size: 1rem;           /* optional: match body text */
+  *line-height: 1.5;          /* optional: improve readability */
+  text-align: justify;          /* avoid justify on <pre> */
 }
