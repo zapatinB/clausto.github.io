@@ -1,0 +1,64 @@
+.nav ul #claustro {
+  margin-right:auto;
+}
+
+.nav ul a:link {
+  color: white;
+  text-decoration: none;
+}
+
+.nav ul a:visited {
+  color: white;
+  text-decoration: none;
+}
+
+.nav ul a:hover {
+  color: white;
+  text-decoration: underline;
+}
+
+.page_content {
+}
+
+#discIntro {
+  margin: 2rem 2rem;
+}
+
+#discIntro p {
+  text-align: justify;
+}
+
+#discPikelangelo p {
+  text-align: justify;
+}
+
+#discPikelangelo {
+  margin: 2rem 2rem;
+  text-align: justify;
+}
+
+.textContainer {
+  min-height: 20rem;
+  text-align: justify;
+}
+
+.textContainer img {
+  float: left;
+  width: auto;
+  height: 20rem;
+  margin-right: 2rem;
+}
+
+.textContainer pre, p {
+  white-space: pre-wrap;     /* preserves line breaks, spaces, tabs + wraps long lines */
+  word-break: break-word;    /* break long words if necessary */
+  overflow-wrap: break-word; /* extra safety */
+  max-width: 100%;           /* never exceed parent width */
+  margin: 0;
+  box-sizing: border-box;
+  display: inline;
+  font-family: inherit;      /* optional: use same font as body */
+  font-size: 1rem;           /* optional: match body text */
+  *line-height: 1.5;          /* optional: improve readability */
+  text-align: justify;          /* avoid justify on <pre> */
+}
