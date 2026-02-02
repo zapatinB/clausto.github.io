@@ -13,11 +13,13 @@ async function insertText(textDir, parentId) {
   }
 }
 
-async function insertDiscs(yamlDir, discDirRef, parentId) {
-  const url = yamlDir;
+async function insertDiscs(yamlDir, parentId) {
+	const textsPath = "/content/discs/texti/"
+	const imagesPath = "/static/media/discs/"
+
   const container = document.querySelector(`#${parentId}`);
   try {
-    const response = await fetch(url);
+    const response = await fetch(yamlDir);
     if (!response.ok) {
       throw new Error(`Response status: ${response.status}`);
     }
@@ -26,11 +28,9 @@ async function insertDiscs(yamlDir, discDirRef, parentId) {
     const result = jsyaml.load(text);
     for (let key in result) {
       let title = result[key]['title'];
-      let textDir = discDirRef+result[key]['name'];
-      let imageDir = result[key]['image'];
-      console.log(title);
-      console.log(textDir);
-      console.log(imageDir);
+      let textDir = textsPath + result[key]['name'];
+      let imageDir = imagesPath + result[key]['image'];
+
       const titleElem = document.createElement('h2');
       titleElem.textContent = title;
       const textContainer = document.createElement('div');
