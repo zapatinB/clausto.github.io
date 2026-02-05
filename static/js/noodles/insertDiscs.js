@@ -28,7 +28,8 @@ async function insertDiscs(yamlDir, parentId) {
     for (let key in result) {
       let title = result[key]['title'];
       let textDir = textsPath + result[key]['name'];
-      let imageDir = imagesPath + result[key]['image'];
+      let imageRef = result[key]['image'];
+      let imageDir = imagesPath + imageRef;
       let iframeDir = result[key]['iframe'];
       console.log(title);
       console.log(textDir);
@@ -42,11 +43,6 @@ async function insertDiscs(yamlDir, parentId) {
       textContainer.setAttribute("class","textContainer");
       container.appendChild(titleElem);
       container.appendChild(textContainer);
-      if (imageDir!="") {
-        const imageElem = document.createElement("img");
-        imageElem.setAttribute("src",imageDir);
-        textContainer.appendChild(imageElem);
-      }
       if (iframeDir!="") {
         const iframeElem = document.createElement("iframe");
         iframeElem.setAttribute("src",iframeDir);
@@ -57,6 +53,11 @@ async function insertDiscs(yamlDir, parentId) {
         //iframeElem.style.marginTop = "10px"
         iframeElem.setAttribute("seamless", "");
         textContainer.appendChild(iframeElem);
+      }
+      else if (imageRef!="") {
+        const imageElem = document.createElement("img");
+        imageElem.setAttribute("src",imageDir);
+        textContainer.appendChild(imageElem);
       }
       await insertText(textDir,textId);
     }
