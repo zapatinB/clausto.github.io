@@ -1,0 +1,6 @@
+.box {
+  background-color: brown;
+  height: 100px;
+  display: flex;
+  border-color: red;
+}

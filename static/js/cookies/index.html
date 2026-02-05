@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang=es>
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClaustoEnt.</title>
+    <link rel="stylesheet" href="../base.css" />
+    <link rel="stylesheet" href="styles.css">
+    <script src="cookie.js" defer></script>
+
+</head>
+
+<body>
+    <div>
+      <a href="../index/index.html">Claustro.</a>
+    </div>
+    <label for="input">Clava número</label>
+    <input id="input" type="number">
+    <p id="output"></p>
+    <label for="fizbuzin">Clava número para fizbuz</label>
+    <input id="fizbuzin" type="number">
+    <p id="fizbuzout"></p>
+
+    <div class="box">
+      <div id="box_child"></div>
+    </div>
+
+    <script>
+    const box_container = document.querySelector(".box")
+    const display = box_container.firstElementChild;
+    console.log(display)
+    const list_containers = document.querySelectorAll("#div")
+    console.log(list_containers)
+    </script>
+
+</body>
+
+</html>
