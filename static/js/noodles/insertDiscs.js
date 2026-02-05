@@ -14,8 +14,8 @@ async function insertText(textDir, parentId) {
 }
 
 async function insertDiscs(yamlDir, parentId) {
-	const textsPath = "content/discs/texti/"
-	const imagesPath = "static/media/discs/"
+	const textsPath = "./content/discs/texti/"
+	const imagesPath = "./static/media/discs/"
   const container = document.querySelector(`#${parentId}`);
   try {
     const response = await fetch(yamlDir);
