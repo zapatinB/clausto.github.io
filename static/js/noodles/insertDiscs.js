@@ -14,8 +14,8 @@ async function insertText(textDir, parentId) {
 }
 
 async function insertDiscs(yamlDir, parentId) {
-	const textsPath = "./content/discs/texti/"
-	const imagesPath = "./static/media/discs/"
+	const textsPath = "texti/"
+	const imagesPath = "../../static/media/discs/"
   const container = document.querySelector(`#${parentId}`);
   try {
     const response = await fetch(yamlDir);
@@ -35,6 +35,7 @@ async function insertDiscs(yamlDir, parentId) {
       console.log(textDir);
       console.log(imageDir);
       console.log(iframeDir);
+
       const titleElem = document.createElement('h2');
       titleElem.textContent = title;
       const textContainer = document.createElement('div');
@@ -43,7 +44,8 @@ async function insertDiscs(yamlDir, parentId) {
       textContainer.setAttribute("class","textContainer");
       container.appendChild(titleElem);
       container.appendChild(textContainer);
-      if (iframeDir!="") {
+
+      if (iframeDir) {
         const iframeElem = document.createElement("iframe");
         iframeElem.setAttribute("src",iframeDir);
         iframeElem.style.border = "0";
@@ -54,7 +56,7 @@ async function insertDiscs(yamlDir, parentId) {
         iframeElem.setAttribute("seamless", "");
         textContainer.appendChild(iframeElem);
       }
-      else if (imageRef!="") {
+      else if (imageRef) {
         const imageElem = document.createElement("img");
         imageElem.setAttribute("src",imageDir);
         textContainer.appendChild(imageElem);
