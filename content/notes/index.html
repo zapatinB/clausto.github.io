@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang=es>
+  <head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>ClaustoEnt.</title>
+
+	<link rel="stylesheet" href="../../static/css/base.css" />
+	<link rel="stylesheet" href="../../static/css/discs/normalize.css" />
+	<link rel="stylesheet" href="../../static/css/discs/layout.css" />
+	<link rel="stylesheet" href="../../static/css/discs/components.css" />
+
+	<script async src="https://cdn.jsdelivr.net/npm/mathjax@2/MathJax.js?config=TeX-AMS_CHTML"></script>
+  </head>
+
+  <body>
+	<div class="page_wrapper">
+	  <nav class="nav_left">
+		  <div class="claustro">
+			<ul>
+			<a href="../index.html">Claustro.</a>
+			</ul>
+		  </div>
+		<ul>
+		<li><a href="../quienesclaustro.html">Quienes Calustro</a></li>
+		<li><a href="../discs/discs.html">Discos</a></li>
+		<li><a href="../discs/discs1.html">+Discos</a></li>
+		<li><a href=".">matenotas</a></li>
+		</ul>
+
+		<ul>
+		<li><a href="../gallery/zapatin.html">Zapatín</a></li>
+		<li><a href="../gallery/rabano.html">El Rábano</a></li>
+		<li><a href="../gallery/taladro.html">Taladro</a></li>
+		<li><a>Come caca</a></li>
+		</ul>
+	  </nav>
+	  <div class="content_wrapper">
+			<div class="math-ex">
+				<h2>big dims small dreams</h2>
+				<h4><i>/tmp/data.bkp</i></h4>
+				<p>
+				<b>Problema:</b> sean \(X_1, \ldots, X_N\) vectores aleatorios independientes e idénticamente
+				distribuidas de dimensión \(p\) con distribución uniforme sobre la bola unitaria centrada
+				en el origen. ¿Cuál es la mediana del mínimo de las distancias al origen de estos vectores?
+				</p>
+
+				<p>
+				Sean \(0 < r < 1\) un escalar y \(B_p\) la bola unitaria centrada en el origen. Denotamos
+				por \(rB_p\) al conjunto \(\{ r\vec{x} \colon \vec{x} \in B_p \}\). Por la uniformidad de \(X_1, \ldots, X_N\) se sigue que
+				las distancias \(D_i = ||X_i||_2\) tienen distribución acumulada
+				$$
+					F_{D_i}(r) = \frac{Vol(rB_p)}{Vol(B_p)} = \frac{r^pVol(B_p)}{Vol(B_p)}
+					= r^p.
+				$$
+				Luego, \(D_1, \ldots, D_N\) son idénticamente distribuidas. Además, como el mapeo
+				\(X_i \mapsto ||X_i||_2\) depende únicamente de \(X_i\), se sigue por la independencia de \(X_1, \ldots, X_N\)
+				que \(D_1, \ldots, D_N\) también son independientes. Como nota adicional, a partir de la
+				función de distribución acumulada \(F_{D_i}\) observamos que \(D_i \sim beta(p, 1)\).
+				</p>
+
+				<p>
+				Denotamos por \(D_{(1)}\) al estadístico de orden \(\min\{D_1, \ldots, D_N\}\). Luego,
+				$$
+				\begin{aligned}
+					F_{D_{(1)}}(r) &= P(\min\{D_1, \ldots, D_N\} \leq r) \\
+					&= 1 - P(\min\{D_1, \ldots, D_N\} > r) \\
+					&= 1 - P(D_1 > r, \ldots, D_N > r) \\
+					&= 1 - P(D_1 > r)\cdots P(D_N > r) \\ 
+					&= 1 - P^N(D > r) \\
+					&= 1 - (1 - F_D(r))^N \\
+					&= 1 - (1 - r^p)^N.
+				\end{aligned}
+				$$
+				Para calcular la mediana observamos que 
+				$$
+				F_{D_{(1)}}(r) = 1/2 \iff r = (1 - (1/2)^{1/N})^{1/p}.
+				$$
+				Ahora me gustará estudiar propiedades asintóticas de \(D_{(1)}\) cuando variamos la
+				dimensión \(p\) de los vectores aleatorios o el tamaño \(N\) de nuestra muestra. Esto nos
+				permitirá aproximar \(\mathbb{E}D_{(1)}\). Utilizaré la notación \(\dot{\sim}\) para denotar convergencia
+				en distribución para una sucesión de variables aleatorias.
+				</p>
+
+				<p>
+				Observemos que \(F_{D_{(1)}}(r) \to 1\) para toda \(r \in (0, 1)\) cuando \(p \to \infty\) y \(N\) es fija.
+				De aquí se sigue que \(D_{(1)} ~\dot{\sim}~ 0\). Similarmente, \(D_{(1)}
+				~\dot{\sim}~ 1\) cuando \(N \to \infty\) y \(p\) es fija.
+				¿Obtenemos resultados más interesantes cuando ambos \(N,p \to \infty\) y se satisface
+				cierta relación entre estos parámetros?
+				</p>
+
+				<p>
+				De \(F_{D_{(1)}}\) analizamos la función \((1-r^p)^N\). Para simplificar el análisis estudiamos el
+				logaritmo \(N\ln(1 - r^p)\). Primero escogemos una \(x \in (0, 1)\) y luego generalizamos
+				los resultados para toda \(r \in (0, 1)\). Por ansatz nos concentramos en los dos casos
+				límite de \(Nx^p\).
+				</p>
+
+				<p>
+				<b>Primer caso:</b> \(Nx^p \to \infty\). Doy por sentado la desigualdad \(\ln(1 - x) \leq -x \) aunque
+				no es difícil de demostrar. El mapeo \(x \mapsto x^p\) es creciente para \(p,x > 0\), luego
+				$$
+				N\ln(1-x^p) \leq -Nx^p \to -\infty,
+				$$
+				y entonces \((1 - x^p)^N \to e^{-\infty} = 0\). Esto implica que \(F_{D_{(1)}}(x) \to 1 - 0 = 1\).
+				</p>
+
+				<p>
+				<b>Segundo caso:</b> \(Nx^p \to \lambda\) para alguna \(\lambda \geq 0\). Por Taylor de \(\ln(1-x)\) alrededor
+				del cero, tenemos
+				$$
+				N\ln(1-x^p) = -Nx^p + \mathcal{O}(Nx^{2p}).
+				$$
+				Por hipótesis, \(Nx^{2p} = (Nx^p) \cdot x^p \to \lambda \cdot 0\), pues \(x \in (0, 1)\). De esto se sigue que
+				\(\mathcal{O}(Nx^{2p}) = o(1)\), y entonces
+				$$
+				N\ln(1 - x^p) = -Nx^p + o(1) \to -\lambda.
+				$$
+				Luego, \(F_{D_{(1)}}(x) \to 1 - e^{-\lambda}\). Cabe remarcar que \(F_{D_{(1)}}(x) \to 0\) si y solo si \(\lambda = 0\).
+				</p>
+
+				<p>
+				Ahora bien, del primer caso tenemos que si \(Nr^p \to \infty\) para toda \(r \in (0, 1)\),
+				entonces \(D_{(1)} ~\dot{\sim}~ 0\), pues
+				$$
+				F_{D_{(1)}}(r) \to \begin{cases}
+				0 & r < 0, \\
+				1 & r \geq 0.
+				\end{cases}
+				$$
+				De esto se sigue que \(\mathbb{E}D_{(1)} \to 0\).
+				</p>
+
+				<p>
+				Supongamos que nos encontramos en el segundo caso junto con el supuesto
+				de que \(\lambda > 0\). Sea \(r \in (0, x)\), por lo que existe \(k > 1\) tal que \(x = k\cdot r\). Luego,
+				$$
+				Nr^p = \frac{Nx^p}{k^p} \to \frac{\lambda}{\infty} = 0,
+				$$
+				y entonces \(F_{D_{(1)}}(r) \to 0\) para \(r < x\). Utilizando el mismo razonamiento junto
+				con el caso anterior, encontramos que \(F_{D_{(1)}}(r) \to 1\) para \(r > x\). Es decir,
+				$$
+				F_{D_{(1)}}(r) = \begin{cases}
+				0 & r < x, \\
+				1 - e^{-\lambda} & r = x, \\
+									 1 & r > x,
+				\end{cases}
+				\stackrel{c.s.}{=}
+				\begin{cases}
+				0 & r < x, \\
+				1 & r \geq x,
+				\end{cases}
+				$$
+				donde el símbolo \(\stackrel{c.s.}{=}\) significa igualdad casi segura. De esta manera encontramos
+				que \(D_{(1)} ~\dot{\sim}~ x\) y por lo tanto \(\mathbb{E}D_{(1)} \to x\). Recordando el significado de las
+				variables aleatorias, podemos asegurar que todas las distancias son mayores a \(x\);
+				existe un espacio vacío entre el origen y la bola \(xB_p\). La tasa con la que aumentamos
+				nuestro tamaño de muestra \(N\) no es suficiente para llenar el espacio vacío
+				generado al agregar dimensiones adicionales. Esto es conocido como <em>la
+				maldición de la dimensionalidad</em>.
+				</p>
+				<p>
+				No nos dejemos impresionar tan fácilmente. La maldición pierde impacto a
+				medida que \(x\) se acerca a 0, pues el espacio vacío que fallamos en llenar es
+				pequeño y no hay nada de que preocuparnos. Si \(x \approx 1\) entonces todos los
+				vectores \(X_1, \ldots, X_N\) se encuentran cerca de la frontera de \(B_p\). Observemos
+				de la convergencia \(Nx^p \to \lambda\) con \(\lambda > 0\) que \(N = \Theta(x^{-p})\). Supongamos,
+				por simpleza, que \(N(x) = x^{-p}\). Luego el costo de disminuir \(x\) marginalmente
+				es \(|N'(x) / N(x)| = p/x\) veces mayor que el costo actual, lo cual tiende a
+				infinito cuando \(x\) tiende a cero. ¿Será esto una manera efectiva de cobrar
+				la adquisición de nuevas observaciones de manera que se preserve la densidad?
+				</p>
+
+				<p>
+				Para el último caso donde \(Nx^p \to 0\) observemos que si \(r
+				\in (0, x)\), entonces
+				existe \(k > 1\) tal que \(x = k\cdot
+				r\) y, por lo tanto,
+				$$
+				Nr^p = \frac{Nx^p}{k^p} \to \frac{0}{\infty} = 0.
+				$$
+				A diferencia del punto anterior, no podemos asegurar que \(Nr^p
+				\to \infty\)
+				cuando \(r > x\), pues nos encontramos con una forma indeterminada \(0/0\),
+				la cual puede tomar cualquier valor en \(\mathbb{R}^+\cup\{\infty\}\). Como no podemos hacer
+				nada al respecto, supongamos que \(Nr^p \to 0\) para todo \(r \in (0, 1)\). Luego,
+				por el segundo caso encontramos que \(F_{D_{(1)}}(r) \to 0\) para todo \(r \in (0, 1)\)
+				y por lo tanto \(D_{(1)} ~\dot{\sim}~
+				1\), lo cual implica que \(\mathbb{E}D_{(1)} \to 1\). En realidad, esto es
+				lo que comúnmente se conoce como la maldición de la dimensionalidad,
+				pues el interior de \(B_p\) es vacío, y todas las observaciones \(X_1, \ldots, X_N\) se
+				encuentran sobre la frontera de esta bola. La densidad de nuestra muestra
+				tiende a cero a medida que aumenta la dimensión.
+				</p>
+			</div>
+	  </div>
+	  <div class="footer"></div>
+	</div>
+  </body>
+</html>
