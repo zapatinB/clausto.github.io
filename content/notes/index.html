@@ -194,6 +194,163 @@
 				tiende a cero a medida que aumenta la dimensión.
 				</p>
 			</div>
+			<div class="math-ex">
+				<h2>réplica a /tmp/data.bkp en dos partes</h2>
+				<h4><i>fermín ghebre</i></h4>
+
+				<p>
+				El teorema 1.2.16 de <a href="https://github.com/tempdata73/thesis/blob/main/thesis/main.pdf">esta tesis</a> indica que la red \(\mathbb{Z}^n\) se puede descomponer
+				como la suma directa de las dos subredes \(\Lambda_p\) y \(\Lambda_h\) definidas como
+				$$
+				\begin{align*}
+					\Lambda_p &= \{ k\vec{\nu} \colon k \in \mathbb{Z} \}, \\
+					\Lambda_h &= \{ M\vec{t} \colon \vec{t} \in \mathbb{Z}^{n-1} \},
+				\end{align*}
+				$$
+				donde \(M\) y \(\vec{\nu}\) son calculados a partir de un vector coprimo \(\vec{q}\). Lo interesante
+				de estas dos subredes es que satisfacen \(\vec{q}^T\Lambda_p = k\) y \(\vec{q}^T\Lambda_h = 0\). Es decir,
+				\(\Lambda_h\) es la subred que contiene todas las soluciones a la ecuación lineal
+				diofantina homogénea \(\vec{q}^T\vec{x} = 0\). Similarmente, \(\Lambda_p\) es la subred de soluciones
+				particulares de la ecuación lineal diofantina \(\vec{q}^T\vec{x} = k\) para cada \(k \in \mathbb{Z}\).
+
+				Para cada vector coprimo \(\vec{q} \in \mathbb{Z}^n\) obtendremos una descomposición de \(\mathbb{Z}^n\)
+				del estilo anterior. Una pregunta que intenta --de manera incompleta, debo
+				añadir-- resolver la tesis es la siguiente: si tenemos dos vectores coprimos \(\vec{q}, \tilde{\vec{q}}\)
+				junto con las subredes \(\Lambda_p, \Lambda_h\) y \(\tilde{\Lambda}_p, \tilde{\Lambda}_h\) inducidas por ellos, ¿cómo se relacionan
+				\(\Lambda_p\) y \(\tilde{\Lambda}_p\), o cómo se relacionan \(\Lambda_h\) y \(\tilde{\Lambda}_h\)? /tmp/data.bkp muestra en el teorema
+				1.2.22 que estas subredes son isomorfas siempre que ciertas proyecciones de
+				\(\vec{q}\) y de \(\tilde{\vec{q}}\) pertenezcan a la misma órbita. En pocas palabras, estas subredes
+				son isomorfas siempre que exista una permutación entre las entradas no nulas de
+				estos vectores coprimos. En este pequeño escrito mostraré que, en realidad, el
+				resultado es mucho más general, pues esto es cierto para cualesquiera dos vectores
+				coprimos con el mismo número de entradas no nulas, independientemente de
+				cualesquiera otras propiedades que pudiesen o no compartir. Esto implica que
+				solamente existe, bajo isomorfismo, una única descomposición de \(\mathbb{Z}^n\) en
+				subredes de este estilo.
+
+				En lo que sigue a continuación supondré, sin pérdida de generalidad, que los
+				vectores coprimos no tienen entradas nulas. Ahora quiero precisar el concepto de
+				isomorfismo de redes, puesto que el autor de la tesis no lo dejó suficientemente
+				claro.
+
+				<b>Definición:</b> Sean \(V, W\) dos espacios vectoriales y sea \(T \colon V \to W\) una
+				transformación lineal invertible tal que su matriz asociada es unimodular. Sean
+				\(\Lambda_V\) y \(\Lambda_W\) dos redes de \(V, W\) respectivamente y supongamos que la imagen de \(T \big|_{\Lambda_V}\)
+				es \(\Lambda_W\). Entonces decimos que estas redes son isomorfas y escribimos \(\Lambda_V \cong \Lambda_W\).
+
+				Sea \(\vec{q} \in \mathbb{Z}^n\) un vector coprimo y consideremos la matriz \(U = [\vec{\nu} \mid M]\). Por el
+				teorema 1.2.16 sabemos que las columnas de esta matriz forman una base
+				de la red \(\mathbb{Z}^n = \Lambda_p \oplus \Lambda_h\). Además, por el corolario 1.2.17, \(U\) es unimodular.
+				Vista como una transformación lineal, tenemos entonces que \(U\colon \mathbb{Z}^n \to \Lambda_p \oplus \Lambda_h\)
+				es un isomorfismo entre estas dos redes. Similarmente, para otro vector coprimo
+				\(\tilde{\vec{q}} \in \mathbb{Z}^n\) obtenemos un isomorfismo \(\tilde{U} \colon
+				\mathbb{Z}^n \to \tilde{\Lambda}_p \oplus \tilde{\Lambda_h}\) de redes. Ahora bien,
+				consideremos la transformación lineal
+				$$
+				U\tilde{U}^{-1} \colon \tilde{\Lambda}_p \oplus \tilde{\Lambda}_h \to \Lambda_p \oplus \Lambda_h.
+				$$
+				No es difícil ver que \(U\tilde{U}^{-1}\) es invertible y unimodular. Por cómo están
+				construidas las matrices \(U, \tilde{U}\) obtenemos
+				$$
+				\begin{align*}
+					\tilde{\vec{\nu}} &\overset{\tilde{U}^{-1}}{\longmapsto} \vec{e}_1 \overset{U}{\longmapsto} \vec{\nu}, \\
+					\tilde{M} &\overset{\tilde{U}^{-1}}{\longmapsto} [\vec{e}_2 \mid \cdots \mid \vec{e}_n] \overset{U}{\longmapsto} M,
+				\end{align*}
+				$$
+				Como \(\tilde{\vec{\nu}}\) y \(\vec{\nu}\) son bases respectivas de \(\tilde{\Lambda}_p\) y \(\Lambda_p\), encontramos que la imagen de
+				\(U\tilde{U}^{-1}\big|_{\tilde{\Lambda}_p}\) es \(\Lambda_p\). Luego, \(\tilde{\Lambda}_p \cong \Lambda_p\). Por un razonamiento similar, obtenemos
+				\(\tilde{\Lambda}_h \cong \Lambda_h\). Esta fue la demostración de la generalización del lema 1.2.21 de la
+				tesis, la cual enuncio acá a modo de resumen.
+
+				<b>Lema 1.2.21 generalizado:</b> Sean \(\vec{q}, \tilde{\vec{q}} \in \mathbb{Z}^n\) vectores coprimos y sean
+				\(\Lambda_p, \tilde{\Lambda}_p, \Lambda_h, \tilde{\Lambda}_h\) las subredes inducidas por ellos y que satisfacen
+				\(\Lambda_p \oplus \Lambda_h = \mathbb{Z}^{n} = \tilde{\Lambda}_p \oplus \tilde{\Lambda}_h\). Entonces \(\Lambda_p \cong \tilde{\Lambda}_p\) y \(\Lambda_h \cong \tilde{\Lambda}_h\).
+
+				La generalización del teorema 1.2.22 es inmediata, por lo que no la enuncio acá.
+				Ahora bien, ¿cómo justificamos la decisión de /tmp/data.bkp de considerar solamente
+				permutaciones de vectores coprimos? Francamente no me he atrevido a preguntarle
+				debido a que se molestará por las enmendaduras que de su tesis he tenido que
+				realizar. Lo que está escrito a continuación es entonces la conversación que me
+				gusta imaginar que tendríamos.
+
+				<b>fermín ghebre: </b>Después de leer minuciosamente el primer capítulo de tu tesis
+				fui capaz de generalizar un par de resultados, como lo puedes observar en este breve
+				texto que he escrito. Con un poco de suerte será publicado en la gaceta semanal de
+				matemáticas que organiza la marquesa de Cambremer. 
+
+				<b>/tmp/data.bkp: </b>Dispénsame un minuto en lo que ajusto este monóculo el mío y
+				absorbo el nuevo conocimiento que seguramente has generado... Jiji, cierto es todo
+				lo que has escrito. Lamento decirte que en una conversación previa que tuve con la
+				princesa de Laumer realizó ella las mismas observaciones... e incluso antes que ella
+				tropecé <i>moi-même</i> con aquellos hallazgos.
+
+				<b>fermín ghebre: </b>Si es cierto lo que estás diciendo, ¿por qué no postular el
+				lema 1.2.21 en su generalidad? ¿Por qué dar falsas esperanzas al lector que tan
+				ciertamente interesado está con lo que tu pluma deja impreso?
+
+				<b>/tmp/data.bkp: </b>Me encantaría darte una respuesta que satisfaga tu sed de
+				curiosidad y lamento la excusa que voy a decirte: por economía de tiempo y espacio.
+				Verás, al caballero Legrandin que tan bien conoces no le agradó en lo más mínimo
+				toda esa sección. Ambos sabemos que toda cuestión algebraica no entra en su paladar,
+				aparentemente por ser anteriores al imperio; que sus gustos recaen siempre en las
+				nuevas tendencias y no se permite apreciar la belleza de tiempos pasados.
+
+				Sería una lástima que tu escrito no sea publicado en la gaceta de <em>la marquesa</em>,
+				así que, si me lo permites, puedo añadir algunas proposiciones que unirán tus
+				resultados con los míos. Verás, para pasar de una red \(\tilde{\Lambda}_p\) a la otra \(\Lambda_p\) es necesario
+				invertir la matriz \(\tilde{U}^{-1}\), lo cual es un trabajo de orden cúbico --claro, si bien recuerdo
+				las lecciones tan finas de aquel compositor Vinteuil. Mi enfoque en las
+				permutaciones es consecuencia del hecho que estas forman un subgrupo del grupo de
+				matrices ortogonales sobre los enteros, ¡así reduciendo el trabajo de invertir la
+				matriz a solo transponerla! Como evidencia, y no estoy sugiriendo que no me creas,
+				te muestro esta nota que tan convenientemente he encontrado en el bolsillo de mi
+				pantalón:
+
+				<b>Definición: </b> Decimos que una matriz invertible \(X\) es ortogonal si \(X^{-1} = X^T\).
+				Denotamos por \(O_n(\mathbb{Z})\) al grupo de matrices ortogonales sobre los enteros.
+
+				<b>Proposición: </b>Es cierto que
+				$$
+				O_n(\mathbb{Z}) = \{ [\pm \vec{e}_{\sigma(1)} \mid \cdots \mid \pm \vec{e}_{\sigma(n)}] \colon \sigma
+				\in S_n \},
+				$$
+				donde \(S_n\) es el grupo de permutaciones en \(n\) letras.
+
+				<b>Demostración: </b>La contención de derecha a izquierda es trivial, por lo que no
+				nos molestamos en mostrar su veracidad. Sea \(X \in O_n(\mathbb{Z})\). Del hecho que
+				\(X^TX = I_n\) encontramos que \(||X_i||^2 = 1\) y \(X_i^TX_j = 0\) para \(i \neq
+				j\), donde
+				\(X_i\) denota la \(i\)-ésima columna de \(X\). Puesto que las entradas son enteras,
+				de la primera observación encontramos que solo una entrada, digamos la
+				\(k_i\)-ésima entrada, es \(\pm 1\), mientras que las otras son cero, por lo que
+				\(X_i = \pm e_{k_i}\). De la segunda observación encontramos que \(X_i\) y \(X_j\)
+				deben ser vectores canónicos distintos. Si definimos la permutación \(\sigma \in
+				S_n\)
+				a partir de \(i \mapsto k_i\), encontramos que \(X = [\pm e_{\sigma(1)} \mid
+				\cdots \mid \pm e_{\sigma(n)}]\) y entonces
+				la contención de izquierda a derecha también es verdadera.
+
+				<b>fermín ghebre: </b>Ya veo, al enfocarte solo en \(O_n(\mathbb{Z})\) puedes construir más
+				fácilmente la transformación lineal que testifica los isomorfismos de
+				redes \(\Lambda_p \cong \tilde{\Lambda}_p\) y \(\Lambda_h \cong \tilde{\Lambda}_h\), pues si los vectores coprimos que inducen estas
+				descomposiciones de \(\mathbb{Z}^n\) son uno la permutación del otro, entonces
+				\(U\tilde{U}^{-1} = U\tilde{U}^T\). <em>¡Rikis!</em> Empero, tu tesis se enfoca exclusivamente en matrices
+				de permutación sin signos, por lo que el tamaño de las órbitas pasan de ser
+				\(2^nn!\) a solamente \(n!\).
+
+				<b>/tmp/data.bkp: </b>Razones de sobra tengo para justificar esa otra reducción al
+				subgrupo de permutaciones, y me encantaría discutirlas contigo en <i>n'importe
+				quelle autre fête</i> organizada ora por los Guermantes, ora por los Verdurin. Temo
+				que en en estos momentos no puedo, puesto que Ya...Odette seguramente
+				está esperando ansiosa mi llegada a su casa desde hace varias horas. <i>Adieu mon
+				ami ! Que Dieu te bénisse ! </i>
+
+				<b>fermín ghebre </b> <em>(susurrándose a sí mismo):</em> ¿Odette? ¿de Crécy? La última vez
+				que la visité fue en Niza y su nombre estaba en boca de todos. Claro, fueron
+				tiempos anteriores a Joyce cuando todavía arrancábame el corazón leyendo
+				a Proust.
+				</p>
+			</div>
 	  </div>
 	  <div class="footer"></div>
 	</div>
