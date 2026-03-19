@@ -1,0 +1,19 @@
+name: sync to s3
+on:
+  push:
+    branches:
+      - main
+permissions:
+  id-token: write
+jobs:
+  sync_to_s3:
+    runs-on: ubuntu-latest
+    steps:
+      - name: configure aws credentials
+        uses: aws-actions/configure-aws-credentials@main
+        with:
+          role-to-assume: ${{ secrets.AWS_ROLE_ARN }}
+          aws-region: ${{ secrets.AWS_REGION }}
+      - name: sync to s3
+        run: |
+          aws s3 sync . s3://${{ secrets.AWS_BUCKET }} --delete --exclude ".git*"
