@@ -8,7 +8,11 @@ permissions:
 jobs:
   sync_to_s3:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
     steps:
+      - name: checkout repository
+        uses: actions/checkout@main
       - name: debug secrets
         run: |
           echo "AWS_BUCKET is ${AWS_BUCKET:+set}"
