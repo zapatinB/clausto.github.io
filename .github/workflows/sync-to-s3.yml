@@ -14,6 +14,8 @@ jobs:
           echo "AWS_BUCKET is ${AWS_BUCKET:+set}"
           echo "AWS_REGION is ${AWS_REGION:+set}"
           echo "AWS_ROLE_ARN is ${AWS_ROLE_ARN:+set}"
+          pwd
+          ls
         env:
           AWS_BUCKET: ${{ secrets.AWS_BUCKET }}
           AWS_REGION: ${{ secrets.AWS_REGION }}
@@ -25,4 +27,4 @@ jobs:
           aws-region: ${{ secrets.AWS_REGION }}
       - name: sync to s3
         run: |
-          aws s3 sync --exclude ".git*" . s3://${{ secrets.AWS_BUCKET }}
+          aws s3 sync --delete --exclude "README.md" --exclude ".github/*" --exclude ".git/*" --exclude ".gitignore" . s3://${{ secrets.AWS_BUCKET }}
