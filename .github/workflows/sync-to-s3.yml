@@ -9,6 +9,15 @@ jobs:
   sync_to_s3:
     runs-on: ubuntu-latest
     steps:
+      - name: debug secrets
+        run: |
+          echo "AWS_BUCKET is ${AWS_BUCKET:+set}"
+          echo "AWS_REGION is ${AWS_REGION:+set}"
+          echo "AWS_ROLE_ARN is ${AWS_ROLE_ARN:+set}"
+        env:
+          AWS_BUCKET: ${{ secrets.AWS_BUCKET }}
+          AWS_REGION: ${{ secrets.AWS_REGION }}
+          AWS_ROLE_ARN: ${{ secrets.AWS_ROLE_ARN }}
       - name: configure aws credentials
         uses: aws-actions/configure-aws-credentials@main
         with:
