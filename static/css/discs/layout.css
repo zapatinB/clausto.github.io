@@ -54,28 +54,3 @@ a:hover {
   margin: 0 auto;
   background-color: #151515; 
 }
-
-.MathJax_Display {
-  width: 100% !important;
-  text-align: left !important;
-  overflow-x: auto;
-  overflow-y: hidden;
-  max-width: 100%;
-}
-
-.math-ex p {
-  max-width: none !important;
-  width: 100% !important;
-}
-
-.content_wrapper {
-  outline: 2px solid green;
-}
-
-.math-ex {
-  outline: 2px solid red;
-}
-
-.math-ex p {
-  outline: 2px solid blue;
-}
